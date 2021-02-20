@@ -18,7 +18,20 @@ const routes = [
     {
         path: "/case",
         name: "case",
-        component: () => import("../views/case/CaseIndex.vue")
+        component: () => import("../views/case/CaseIndex.vue"),
+        redirect:{ name: 'caseindex' },
+        children:[
+            {
+                path: "caseindex",
+                name: "caseindex",
+                component: () => import("../views/case/index.vue"),
+            },
+            {
+                path: "casedetails",
+                name: "casedetails",
+                component: () => import("../views/case/details.vue"),
+            },
+        ]
     },
     //全链路设计卡片
     {
