@@ -587,7 +587,7 @@ export default {
   color: white;
   /*padding: 0!important;*/
   padding: .8rem;
-  font-size: .2rem;
+  /*font-size: .2rem;*/
 }
 .iphone-case-nav /deep/.el-radio-button__orig-radio:checked+.el-radio-button__inner{
   background: #6979ff;

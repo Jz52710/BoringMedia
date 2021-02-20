@@ -103,7 +103,7 @@
       <!--线-->
       <div class="line-box"></div>
 
-      <div class="box-show" :style="{ display: this.boxShadow}"></div>
+      <div class="box-show" :style="{ display: this.boxShadow}" @mousewheel.prevent @touchmove.prevent></div>
     </el-container>
   </div>
 </template>
@@ -178,7 +178,7 @@ export default {
   /*color: #333;*/
   text-align: center;
   line-height: 80px!important;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 80px!important;
   z-index: 99;
@@ -358,7 +358,7 @@ export default {
 }
 /*蒙版*/
 .box-show{
-  position: absolute;
+  position: fixed;
   background: black;
   opacity: .6;
   width: 100%;

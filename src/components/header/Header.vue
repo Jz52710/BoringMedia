@@ -37,15 +37,15 @@
 
     <el-col v-show="isActive" class="box-show">
       <el-col class="show-box">
-        <div class="show-text" @click="$router.push({name:'index'})">{{ $t('user.home') }}</div>
-        <div class="show-text" @click="$router.push({name:'case'})">{{ $t('user.boringmedia') }}</div>
-        <div class="show-text" @click="$router.push({name:'card'})">{{ $t('user.linkcard') }}</div>
-        <div class="show-text" @click="$router.push({name:'platform'})">{{ $t('user.clouddata') }}</div>
-        <div class="show-text" @click="$router.push({name:'research'})">{{ $t('user.RD') }}</div>
-        <div class="show-text" @click="$router.push({name:'trends'})">{{ $t('user.news') }}</div>
-        <div class="show-text" @click="$router.push({name:'concerning'})">{{ $t('user.contactus') }}</div>
+        <div class="show-text" @click="nextrouter('index')">{{ $t('user.home') }}</div>
+        <div class="show-text" @click="nextrouter('case')">{{ $t('user.boringmedia') }}</div>
+        <div class="show-text" @click="nextrouter('card')">{{ $t('user.linkcard') }}</div>
+        <div class="show-text" @click="nextrouter('platform')">{{ $t('user.clouddata') }}</div>
+        <div class="show-text" @click="nextrouter('research')">{{ $t('user.RD') }}</div>
+        <div class="show-text" @click="nextrouter('trends')">{{ $t('user.news') }}</div>
+        <div class="show-text" @click="nextrouter('concerning')">{{ $t('user.contactus') }}</div>
 <!--        <div class="show-text" @click="$router.push({name:'join'})">{{ $t('user.joinus') }}</div>-->
-        <div class="show-text" @click="$router.push({name:'login'})">{{ $t('user.login') }}/{{ $t('user.register') }}</div>
+        <div class="show-text" @click="nextrouter('login')">{{ $t('user.login') }}/{{ $t('user.register') }}</div>
 <!--        <div class="show-text" @click="changeLanguage()">{{$t('language.name')}}</div>-->
       </el-col>
       <!--       <div class="black-box"></div>-->
@@ -90,6 +90,10 @@ export default {
     },
     sendMsg1(){
       this.$emit('fun',this.msg1)
+    },
+    nextrouter(data){
+      this.$router.push({name:data})
+      window.scroll(0, 0);
     }
 
     // emittoparent(){

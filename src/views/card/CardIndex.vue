@@ -414,7 +414,7 @@
       </el-main>
       <!--      <el-footer>Footer</el-footer>-->
       <!--蒙版-->
-      <div class="box-show" :style="{ display: this.boxShadow}"></div>
+      <div class="box-show" :style="{ display: this.boxShadow}" @mousewheel.prevent @touchmove.prevent></div>
     </el-container>
   </div>
 </template>
@@ -569,7 +569,7 @@ export default {
 }
 /*蒙版*/
 .box-show{
-  position: absolute;
+  position: fixed;
   background: black;
   opacity: .6;
   width: 100%;
